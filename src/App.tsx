@@ -12,12 +12,12 @@ const App: React.FC = () => {
       <header className="App-header">
         <h1>Welcome to React Canary (Version 19) with Vite and TypeScript!</h1>
       </header>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:city" element={<CityWeatherPage />} />
-        </Routes>
-      </Router>
+      {/*<Router>*/}
+      {/*  <Routes>*/}
+      {/*    <Route path="/" element={<Home />} />*/}
+      {/*    <Route path="/:city" element={<CityWeatherPage />} />*/}
+      {/*  </Routes>*/}
+      {/*</Router>*/}
     </div>
   );
 }

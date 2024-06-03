@@ -11,4 +11,9 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/store')
     }
   },
+  ssr: {
+    external: [
+      'react-router-dom'
+    ]
+  }
 });
