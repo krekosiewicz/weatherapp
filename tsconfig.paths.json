@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Set the base URL for path mappings.
+    "paths": {
+      "@api/*": ["src/api/*"],
+      "@src/*": ["src/*"],
+      "@store/*": ["src/store/*"]
+    }
+  }
+}
