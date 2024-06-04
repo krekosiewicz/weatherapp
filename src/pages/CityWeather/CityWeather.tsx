@@ -1,7 +1,7 @@
 // src/pages/CityWeather.tsx
 import { Suspense, useMemo } from 'react'
 import { useParams } from 'react-router-dom';
-import { weatherApiActions } from '@api/weatherApi.actions.ts'
+import { weatherApiActions } from '../../logic/api/weatherApi.actions.ts'
 import WeatherDetails from './serverComponents/weatherDetails.tsx'
 import { SearchCity } from '@/pages/components/searchCity.tsx'
 

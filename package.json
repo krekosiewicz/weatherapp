@@ -14,7 +14,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
     "@uidotdev/usehooks": "^2.4.1",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-938cd9a-20240601",
     "compression": "^1.7.4",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-51a85ea-20240601",
     "express": "^4.19.2",
     "react": "^19.0.0-rc-6d3110b4d9-20240531",
     "react-dom": "^19.0.0-rc-6d3110b4d9-20240531",
@@ -28,7 +30,7 @@
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitejs/plugin-react": "^4.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
