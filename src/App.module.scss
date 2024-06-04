@@ -1,0 +1,8 @@
+@import '@styles/^variables.scss';
+
+.appContainer {
+  //background-color: $celadon;
+  height: 100vh;
+  width: 100vw;
+  padding: $layout-unit * 2;
+}

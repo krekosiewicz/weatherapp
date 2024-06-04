@@ -1,21 +1,20 @@
 /// <reference types="react/experimental" />
 
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/main.scss';
 // import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { store } from './logic/store/store';
 import { BrowserRouter } from 'react-router-dom'
-import { Router } from './router'
-import './index.css'
 import React from 'react';
+import App from '@/App.tsx'
 
 ReactDOM.hydrateRoot(
   document.getElementById('root') as HTMLElement,
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Router />
+        <App />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

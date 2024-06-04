@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react'
 import { useDispatch } from 'react-redux';
 import { setLatestCity, addLatestCity } from '../../../store/weather/weatherSlice';
 import WeatherDetails from '../serverComponents/weatherDetails'
-import { fetchWeather } from '@api/fetchWeather.ts'
+import { fetchWeather } from '@/logic/api/fetchWeather.ts'
 
 const WeatherContainer = ({ city, cityPromise }: { city: string, cityPromise?: Promise<any> }) => {
   // const dispatch = useDispatch();

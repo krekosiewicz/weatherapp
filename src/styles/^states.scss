@@ -1,0 +1,22 @@
+@import './^variables';
+
+.isActive {
+  background-color: $lemon-lime;
+}
+
+.isDisabled {
+  background-color: $antiflash-white;
+  color: $raisin-black;
+  cursor: not-allowed;
+}
+
+
+.centered-h {
+  display: flex;
+  justify-content: center;
+}
+
+.centered-v {
+  display: flex;
+  align-items: center;
+}

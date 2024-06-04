@@ -1,0 +1,35 @@
+@import '^variables';
+
+.footer {
+  background-color: $raisin-black;
+  color: $white;
+  padding: $layout-unit;
+  text-align: center;
+}
+
+.header {
+  background-color: $raisin-black;
+  color: $white;
+  padding: $layout-unit;
+
+  @include respond-to('tablet') {
+    padding: $layout-unit * 2;
+  }
+
+  @include respond-to('small-desktop') {
+    padding: $layout-unit * 3;
+  }
+}
+
+.appContainer {
+  height: 100vh;
+  width: 100vw;
+  padding: $layout-unit * 2;
+}
+
+.appContent {
+  max-width: $breakpoint-desktop;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

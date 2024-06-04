@@ -1,0 +1,39 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#EDEDEEff"/>
+
+    <!-- Sun -->
+    <circle cx="200" cy="200" r="100" fill="#EDFC2Aff"/>
+    <line x1="200" y1="50" x2="200" y2="0" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="200" y1="350" x2="200" y2="400" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="50" y1="200" x2="0" y2="200" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="350" y1="200" x2="400" y2="200" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="75" y1="75" x2="35" y2="35" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="325" y1="75" x2="365" y2="35" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="75" y1="325" x2="35" y2="365" stroke="#EDFC2Aff" stroke-width="10"/>
+    <line x1="325" y1="325" x2="365" y2="365" stroke="#EDFC2Aff" stroke-width="10"/>
+
+    <!-- Cloud -->
+    <ellipse cx="600" cy="250" rx="120" ry="70" fill="#8bcef2ff"/>
+    <ellipse cx="700" cy="250" rx="120" ry="70" fill="#8bcef2ff"/>
+    <ellipse cx="650" cy="220" rx="120" ry="70" fill="#8bcef2ff"/>
+
+    <!-- Rain -->
+    <line x1="600" y1="320" x2="600" y2="370" stroke="#23232Eff" stroke-width="10"/>
+    <line x1="650" y1="320" x2="650" y2="370" stroke="#23232Eff" stroke-width="10"/>
+    <line x1="700" y1="320" x2="700" y2="370" stroke="#23232Eff" stroke-width="10"/>
+
+    <!-- Thunder -->
+    <polygon points="620,370 650,420 630,420 660,470 640,470 670,520" fill="#ff3e67ff"/>
+
+    <!-- Person in anti-rain clothes -->
+    <circle cx="512" cy="650" r="50" fill="#ff3e67ff"/>
+    <rect x="462" y="700" width="100" height="150" fill="#ff3e67ff"/>
+    <rect x="437" y="850" width="40" height="100" fill="#23232Eff"/>
+    <rect x="547" y="850" width="40" height="100" fill="#23232Eff"/>
+    <rect x="462" y="700" width="100" height="30" fill="#EDFC2Aff"/>
+
+    <!-- Hands -->
+    <line x1="462" y1="730" x2="412" y2="780" stroke="#ff3e67ff" stroke-width="10"/>
+    <line x1="562" y1="730" x2="612" y2="780" stroke="#ff3e67ff" stroke-width="10"/>
+</svg>

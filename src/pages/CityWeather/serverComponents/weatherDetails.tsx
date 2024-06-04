@@ -7,7 +7,6 @@ import { use } from 'react'
 
 function WeatherDetails({ city, cityPromise }: { city: string, cityPromise: Promise<any> }) {
   const data = use(cityPromise);
-  console.log(data)
   const weather = data.current;
 
   return (

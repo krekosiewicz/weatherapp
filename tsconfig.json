@@ -6,6 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": ".",
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
@@ -19,7 +20,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Paths */
+    "paths": {
+      "@api/*": ["src/logic/api/*"], // Defines module path aliases for @api.
+      "@/*": ["src/*"], // Defines module path aliases for @src.
+      "@store/*": ["src/logic/store/*"], // Defines module path aliases for @store.
+      "@styles/*": ["src/styles/*"], // Defines module path aliases for @styles.
+      "@assets/*": ["src/assets/*"] // Defines module path aliases for @assets.
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
