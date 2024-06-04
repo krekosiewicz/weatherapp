@@ -21,21 +21,26 @@
   box-shadow: 0 4px 8px rgba($raisin-black, 0.1);
 }
 
+
+@mixin commonStyles {
+  border-radius: $border-radius-md;
+  border: $border-width-default solid $border-color-default;
+  padding: $default-spacing $default-spacing;
+  font-size: $font-size-base;
+  line-height: 1.25;
+  transition: all 0.25s;
+}
+
 .appInputTextField {
   position: relative;
   width: 100%;
 
   input {
+    @include commonStyles;
     width: 100%;
-    font-size: $font-size-base;
-    border-radius: $border-radius-md;
-    border: $border-width-default solid $raisin-black;
-    padding: $default-spacing;
-    line-height: 1.25;
 
     color: $raisin-black;
     box-shadow: 0 10px 15px rgba(31, 41, 55, 0.05);
-    transition: all 0.25s;
 
     &::placeholder {
       color: $periwinkle;
@@ -60,14 +65,8 @@
 
 
 .appButton {
-    border-radius: $border-radius-md;
-    border: $border-width-default solid $border-color-default;
-    padding: $default-spacing $default-spacing;
-    font-size: $font-size-base;
-    line-height: 1.25;
-    font-weight: 500;
+    @include commonStyles;
     cursor: pointer;
-    transition: all 0.25s;
 
   &:hover {
     border-color: $raisin-black;

@@ -8,7 +8,6 @@ import { SearchCity } from '@/pages/components/searchCity.tsx'
 const CityWeatherPage = () => {
   const { city } = useParams<{ city: string }>();
   const cityPromise = useMemo(() => weatherApiActions(city || ''), [city])
-  console.log('cityPromise', cityPromise);
 
 
   return (

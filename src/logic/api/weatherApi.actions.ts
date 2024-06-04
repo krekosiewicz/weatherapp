@@ -9,6 +9,7 @@ export const weatherApiActions = async (city: string) => {
   return response.json();
 };
 
+export type Suggestion = any;
 
 export const fetchAutocompleteSuggestions = async (query: string) => {
   const response = await fetch(
