@@ -1,5 +1,5 @@
-// src/api/fetchWeather.ts
-export const fetchWeather = async (city: string) => {
+// src/api/weatherApi.actions.ts
+export const weatherApiActions = async (city: string) => {
   const response = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_APP_WEATHER_API_KEY}&q=${city}`
   );
@@ -8,3 +8,5 @@ export const fetchWeather = async (city: string) => {
   }
   return response.json();
 };
+
+

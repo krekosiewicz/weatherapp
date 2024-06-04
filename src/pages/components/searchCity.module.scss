@@ -1,0 +1,30 @@
+@import '@styles/^variables';
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $default-spacing;
+
+  margin: calc($default-spacing*2) auto;
+
+  & > div:last-child {
+    padding: calc($default-spacing/2);
+    height: fit-content;
+  }
+
+
+  @include respond-to('mobile') {
+    width: 300px;
+  }
+
+
+  @include respond-to('small-desktop') {
+    width: 500px;
+  }
+}
+
+.searchIcon {
+  height: 32px;
+  width: 32px;
+}

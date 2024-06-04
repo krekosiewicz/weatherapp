@@ -1,13 +1,13 @@
 // src/pages/CityWeather.tsx
 import { Suspense, useMemo } from 'react'
 import { useParams } from 'react-router-dom';
-import { fetchWeather } from '@/logic/api/fetchWeather.ts'
+import { weatherApiActions } from '@api/weatherApi.actions.ts'
 import WeatherDetails from './serverComponents/weatherDetails.tsx'
 import { SearchCity } from '@/pages/components/searchCity.tsx'
 
 const CityWeatherPage = () => {
   const { city } = useParams<{ city: string }>();
-  const cityPromise = useMemo(() => fetchWeather(city || ''), [city])
+  const cityPromise = useMemo(() => weatherApiActions(city || ''), [city])
   console.log('cityPromise', cityPromise);
 
 

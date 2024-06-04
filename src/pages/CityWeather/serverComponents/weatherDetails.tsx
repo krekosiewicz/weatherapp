@@ -1,5 +1,5 @@
 // src/serverComponents/WeatherDetails.tsx
-import { fetchWeather } from '@api/fetchWeather'
+import { weatherApiActions } from '@api/weatherApi.actions.ts'
 import { use } from 'react'
 
 // https://react.dev/reference/rsc/server-components
