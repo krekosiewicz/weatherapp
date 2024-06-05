@@ -25,7 +25,6 @@
 @mixin commonStyles {
   border-radius: $border-radius-md;
   border: $border-width-default solid $border-color-default;
-  padding: $default-spacing $default-spacing;
   font-size: $font-size-base;
   line-height: 1.25;
   transition: all 0.25s;
@@ -38,6 +37,8 @@
   input {
     @include commonStyles;
     width: 100%;
+    padding: $default-spacing $default-spacing;
+
 
     color: $raisin-black;
     box-shadow: 0 10px 15px rgba(31, 41, 55, 0.05);
@@ -65,10 +66,36 @@
 
 
 .appButton {
-    @include commonStyles;
-    cursor: pointer;
+  @include commonStyles;
+  padding: $default-spacing $default-spacing;
+
+  cursor: pointer;
 
   &:hover {
     border-color: $raisin-black;
+  }
+}
+
+
+.autocompleteList {
+  @include commonStyles;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $white;
+  border: $border-width-default solid $border-color-default;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+
+  .suggestionItem {
+    padding: $default-spacing;
+    cursor: pointer;
+
+    &:hover,
+    &.activeSuggestion {
+      color: $folly;
+    }
   }
 }

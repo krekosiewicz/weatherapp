@@ -1,21 +1,21 @@
 // src/pages/CityWeather.tsx
 import { Suspense, useMemo } from 'react'
 import { useParams } from 'react-router-dom';
-import { weatherApiActions } from '../../logic/api/weatherApi.actions.ts'
-import WeatherDetails from './serverComponents/weatherDetails.tsx'
-import { SearchCity } from '@/pages/components/searchCity.tsx'
+import { parseWeatherForecastToFrontend } from '@api/weatherApi.actions.ts'
+import WeatherDetails from './weatherDetails.tsx'
+import { AutocompleteCity } from '@/pages/components/autocompleteCity'
 
 const CityWeatherPage = () => {
   const { city } = useParams<{ city: string }>();
-  const cityPromise = useMemo(() => weatherApiActions(city || ''), [city])
+
+  const cityPromise = useMemo(() => parseWeatherForecastToFrontend(city || ''), [city]);
 
 
   return (
-    <div>
-      <SearchCity></SearchCity>
+    <div className={'smallSize'}>
+      <AutocompleteCity wide></AutocompleteCity>
       <Suspense fallback={<div>Loading weather details...</div>}>
         <WeatherDetails cityPromise={cityPromise} />
-        {/*<WeatherContainer city={city || ''} cityPromise={cityPromise} />*/}
       </Suspense>
     </div>
   );

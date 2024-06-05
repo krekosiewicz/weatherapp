@@ -1,60 +1,15 @@
-import styles from './searchCity.module.scss';
+import styles from './autocompleteCity.module.scss';
 import searchIcon from '@assets/search-icon.svg';
-import { Suspense, useMemo, useState, useEffect, useRef, use, FC } from 'react'
+import { Suspense, useMemo, useState, useEffect,FC } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useActionState } from 'react';
-import { getAutocompleteSuggestions, Suggestion } from '../../logic/api/weatherApi.actions.ts';
+import { getAutocompleteSuggestions } from '../../logic/api/weatherApi.actions';
 import { useDebounce } from '@uidotdev/usehooks';
+import { AutocompleteList } from '@/pages/components/autocompleteList'
+import { SuggestionB } from '@api/weatherApi.types.backend.ts'
 
-type AutocompleteSuggestionsProps = {
-  suggestionPromise: Promise<Suggestion[]>;
-  onSuggestionClick: (suggestion: Suggestion) => void;
-};
 
-const AutocompleteSuggestions = ({ suggestionPromise, onSuggestionClick }: AutocompleteSuggestionsProps) => {
-  const suggestions = use(suggestionPromise);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!suggestions.length) return;
-
-    if (event.key === 'ArrowDown') {
-      setSelectedIndex((prevIndex) => Math.min(prevIndex + 1, suggestions.length - 1));
-      listRef.current?.children[selectedIndex + 1]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else if (event.key === 'ArrowUp') {
-      setSelectedIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-      listRef.current?.children[selectedIndex - 1]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else if (event.key === 'Enter' && selectedIndex >= 0) {
-      onSuggestionClick(suggestions[selectedIndex]);
-    }
-  };
-
-  useEffect(() => {
-    const inputElement = document.querySelector<HTMLInputElement>('[name="city"]');
-    inputElement?.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      inputElement?.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown, suggestions]);
-
-  return (
-    <div ref={listRef} className={'autocompleteList'}>
-      {suggestions.map((suggestion, index) => (
-        <div
-          key={suggestion.id}
-          className={`${'suggestionItem'} ${index === selectedIndex ? 'activeSuggestion' : ''}`}
-          onClick={() => {onSuggestionClick(suggestion); console.log('aaa')}}
-        >
-          {suggestion.name}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export const SearchCity: FC<{isFullWidth: boolean}> = ({isFullWidth}) => {
+export const AutocompleteCity: FC<{wide?: boolean}> = ({wide}) => {
   const [city, setCity] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -72,7 +27,7 @@ export const SearchCity: FC<{isFullWidth: boolean}> = ({isFullWidth}) => {
   );
 
 
-  const handleSuggestionClick = (suggestion: Suggestion) => {
+  const handleSuggestionClick = (suggestion: SuggestionB) => {
     navigate(`/${suggestion.name}`);
     setCity('');
     setIsOpen(false);
@@ -90,7 +45,7 @@ export const SearchCity: FC<{isFullWidth: boolean}> = ({isFullWidth}) => {
 
   return (
     <>
-      <form className={`${styles.searchBox} ${isFullWidth ? styles.fullWidth : ''}`} onSubmit={submitAction}>
+      <form className={`${styles.searchBox} ${wide ? styles.wide : ''}`} onSubmit={submitAction}>
         <div className={'appInputTextField'}>
           <input
             autoComplete="off"
@@ -103,7 +58,8 @@ export const SearchCity: FC<{isFullWidth: boolean}> = ({isFullWidth}) => {
           {isOpen && (
             <Suspense>
               {city && (
-                <AutocompleteSuggestions
+                <AutocompleteList
+                  onClose={() => setIsOpen(false)}
                   suggestionPromise={suggestionPromise}
                   onSuggestionClick={handleSuggestionClick}
                 />

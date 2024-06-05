@@ -28,9 +28,15 @@
 }
 
 .appContent {
-  max-width: $breakpoint-desktop;
+  width: 100%;
+  max-width: $breakpoint-small-desktop;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+}
+
+.smallSize {
+  width: 100%;
+  max-width: $breakpoint-tablet;
 }

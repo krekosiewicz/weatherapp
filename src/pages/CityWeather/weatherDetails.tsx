@@ -1,20 +1,28 @@
 // src/serverComponents/WeatherDetails.tsx
-import { use } from 'react'
+import { use } from 'react';
+import { useDispatch } from 'react-redux';
+import { addLatestCity, setLatestCity } from '@store/weather/weatherSlice'
+import { WeatherResponseF } from '@api/weatherApi.types.frontend' // Ensure the correct path
 
-// https://react.dev/reference/rsc/server-components
-
-
-function WeatherDetails({  cityPromise }: { cityPromise: Promise<any> }) {
+function WeatherDetails({ cityPromise }: { cityPromise: Promise<WeatherResponseF> }) {
+  "use memo";
   const data = use(cityPromise);
-  console.log(data)
-  const weather = data.current;
+  const dispatch = useDispatch();
+
+  // Dispatch Redux actions directly in the server component
+  if (data.current.location) {
+    dispatch(setLatestCity(data));
+    dispatch(addLatestCity(data));
+  }
+
+  console.log(JSON.stringify(data, null, 2));
 
   return (
     <div>
-      <h1>{data.location.name}</h1>
-      <p>Temperatura: {weather.temp_c}°C</p>
-      <p>Wilgotnosc: {weather.humidity}%</p>
-      <p>Siła wiatru: {weather.wind_kph} kph</p>
+      <h1>{data.current.location}</h1>
+      <p>Temperatura: {data.current.temperature}°C</p>
+      <p>Wilgotność: {data.current.humidity}%</p>
+      <p>Siła wiatru: {data.current.windSpeed}m/s</p>
     </div>
   );
 }

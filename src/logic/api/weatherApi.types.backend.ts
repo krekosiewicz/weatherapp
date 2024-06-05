@@ -1,4 +1,4 @@
-// src/api/weatherApi.types.ts
+// src/api/weatherApi.types.backend.ts
 export type SuggestionB = {
   id: number;
   name: string;
@@ -9,17 +9,14 @@ export type SuggestionB = {
   url: string;
 };
 
-export interface WeatherResponseB {
+export type WeatherResponseB = {
   location: LocationB;
   current: CurrentWeatherB;
-}
+};
 
-export interface WeatherForecastResponseB {
-  location: LocationB;
-  current: CurrentWeatherB;
+export type WeatherForecastResponseB = WeatherResponseB & {
   forecast: ForecastB;
-}
-
+};
 
 export interface LocationB {
   name: string;
