@@ -5,6 +5,7 @@ import { setLatestCity } from '@store/weather/weatherSlice.ts'
 import { ForecastDayF, WeatherResponseF } from '@api/weatherApi.types.frontend.ts'
 import styles from './weatherDetails.module.scss';
 import React from 'react';
+import WeatherCityCard from '@/pages/CityWeather/components/weatherCityCard.tsx'
 
 
 
@@ -31,15 +32,7 @@ function WeatherDetails({ cityPromise }: { cityPromise: Promise<WeatherResponseF
 
   return (
     <>
-      <div className={`${styles.cityCardDetails} card`}>
-        <h1 className={styles.cityHeader}>
-          {data.current.location}
-          <img src={data.current.icon} alt="Weather icon" style={{ width: '80px', height: '80px' }}/>
-        </h1>
-        <p>Temperatura: {data.current.temperature}°C</p>
-        <p>Wilgotność: {data.current.humidity}%</p>
-        <p>Siła wiatru: {data.current.windSpeed}m/s</p>
-      </div>
+      <WeatherCityCard data={data.current} />
       <div>
         <h6 className={styles.forecastHeader}>Pogoda na najbliższe dni:</h6>
         <div className={styles.forecastGrid}>

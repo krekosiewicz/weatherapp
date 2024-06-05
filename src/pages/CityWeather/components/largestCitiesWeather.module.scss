@@ -4,3 +4,10 @@
   display: flex;
   margin-bottom: $default-spacing;
 }
+
+.cityRow {
+  display: flex;
+  align-items: center;
+  padding: $default-spacing/2;
+  width: 100%;
+}
