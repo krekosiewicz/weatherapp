@@ -10,6 +10,7 @@ import {
   SunnyPeriod,
   AstroF
 } from './weatherApi.types.frontend';
+import { apiActionFetchBulkWeather, apiActionFetchCurrentForecast } from '@api/weatherApi.actions.ts'
 
 export function parseWeatherResponse(rawData: WeatherForecastResponseB): WeatherResponseF {
   return {
@@ -75,3 +76,18 @@ function parseAstro(astro: AstroB): AstroF {
     moonIllumination: astro.moon_illumination
   };
 }
+
+
+// end parsers
+
+
+export const parseBulkWeatherToFrontend = async (): Promise<WeatherResponseF[]> => {
+  const bulkData = await apiActionFetchBulkWeather();
+  return bulkData.map(parseWeatherResponse);
+};
+
+export const parseWeatherForecastToFrontend = async (city: string): Promise<WeatherResponseF> => {
+  const backendData = await apiActionFetchCurrentForecast(city);
+  return parseWeatherResponse(backendData);
+};
+

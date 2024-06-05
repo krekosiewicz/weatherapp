@@ -1,0 +1,51 @@
+@import '@styles/^variables';
+
+.cityCardDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cityHeader {
+  margin: calc($default-spacing/2) 0;
+  display: flex;
+  align-items: center;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: min-content min-content 1fr;
+  gap: $default-spacing 0;
+  margin-top: $default-spacing;
+}
+
+.forecastHeader {
+  padding: $default-spacing $default-spacing 0 $default-spacing
+}
+
+.cityRow {
+  display: contents; // To ensure grid items act as individual rows
+  box-shadow: 0 4px 8px rgba($raisin-black, 0.1);
+}
+
+.cityRow > * {
+  display: flex;
+  align-items: center;
+  padding: calc($default-spacing/2) $default-spacing;
+}
+.cityRow > div:last-child {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-top-right-radius: $default-spacing;
+  border-bottom-right-radius: $default-spacing;
+}
+
+.cityRow > :first-child {
+  border-top-left-radius: $default-spacing;
+  border-bottom-left-radius: $default-spacing;
+}
+
+.forecastGrid > .cityRow:nth-child(2n +1) * {
+  background-color: $antiflash-white; // Light grey background for specific rows
+}

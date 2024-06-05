@@ -15,8 +15,8 @@
 
 .card {
   border: 1px solid $antiflash-white;
-  border-radius: 8px;
-  padding: $layout-unit;
+  border-radius: $border-radius-md;
+  padding: $default-spacing;
   background-color: $white;
   box-shadow: 0 4px 8px rgba($raisin-black, 0.1);
 }

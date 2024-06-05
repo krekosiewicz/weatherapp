@@ -1,4 +1,4 @@
-import { SuggestionB } from '@api/weatherApi.types.backend';
+import { SuggestionB } from '@api/weatherApi.types.backend.ts';
 import { useClickAway } from '@uidotdev/usehooks';
 import { RefObject, use, useEffect, useState } from 'react'
 

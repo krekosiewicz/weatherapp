@@ -17,6 +17,20 @@ export type WeatherResponseB = {
 export type WeatherForecastResponseB = WeatherResponseB & {
   forecast: ForecastB;
 };
+export type WeatherForecastResponseBulkB = {
+  bulk: BulkQueryResponseB[];
+};
+
+export type BulkQueryResponseB = {
+  query: {
+    q: string;
+    custom_id: "";
+    location: LocationB;
+    current: CurrentWeatherB;
+    forecast: ForecastB;
+  }
+}
+
 
 export interface LocationB {
   name: string;

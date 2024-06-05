@@ -31,4 +31,10 @@ export default {
 
 
 
-REACT 19 RC, redux toolkitq, SSR, *SMACSS (Scalable and Modular Architecture for CSS)**, MOBILE FIRST, 
+REACT 19 RC, redux toolkitq,
+SSR, *SMACSS (Scalable and Modular Architecture for CSS)**,
+MOBILE FIRST, Docker, full responsive, hosted, jest, custom hooks, eslint rules, vite 
+
+
+CLS, hydration,
+

@@ -1,6 +1,6 @@
 import weatherImage from '@assets/weatherapp.webp';
 import styles from './Home.module.scss';
-import { AutocompleteCity } from '@/pages/components/autocompleteCity.tsx'
+import { AutocompleteCity } from '@/pages/components/autocomplete/autocompleteCity.tsx'
 
 
 const Home = () => {

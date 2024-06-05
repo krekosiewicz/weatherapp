@@ -3,10 +3,11 @@ import searchIcon from '@assets/search-icon.svg';
 import { Suspense, useMemo, useState, useEffect,FC } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useActionState } from 'react';
-import { getAutocompleteSuggestions } from '../../logic/api/weatherApi.actions';
+import { getAutocompleteSuggestions } from '@api/weatherApi.actions.ts';
 import { useDebounce } from '@uidotdev/usehooks';
-import { AutocompleteList } from '@/pages/components/autocompleteList'
+import { AutocompleteList } from '@/pages/components/autocomplete/autocompleteList.tsx'
 import { SuggestionB } from '@api/weatherApi.types.backend.ts'
+import { useFormStatus } from 'react-dom';
 
 
 export const AutocompleteCity: FC<{wide?: boolean}> = ({wide}) => {
@@ -14,7 +15,6 @@ export const AutocompleteCity: FC<{wide?: boolean}> = ({wide}) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const debouncedSearch = useDebounce(city, 500);
-
   const [error, submitAction] = useActionState(
     async () => {
       if (city.length < 3) {
@@ -25,7 +25,6 @@ export const AutocompleteCity: FC<{wide?: boolean}> = ({wide}) => {
     },
     null
   );
-
 
   const handleSuggestionClick = (suggestion: SuggestionB) => {
     navigate(`/${suggestion.name}`);

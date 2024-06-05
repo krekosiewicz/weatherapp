@@ -1,7 +1,11 @@
 // src/api/weatherApi.actions.ts
-import { SuggestionB, WeatherForecastResponseB } from '@api/weatherApi.types.backend'
-import { parseWeatherResponse } from '@api/weatherApi.parsers'
-import { WeatherResponseF } from '@api/weatherApi.types.frontend'
+import {
+  BulkQueryResponseB,
+  SuggestionB,
+  WeatherForecastResponseB,
+  WeatherForecastResponseBulkB
+} from '@api/weatherApi.types.backend'
+import { largestCitiesInPoland } from '@store/largestPolishCities.const.ts'
 
 export const apiActionFetchCurrentForecast = async (city: string): Promise<WeatherForecastResponseB> => {
   const response = await fetch(
@@ -13,11 +17,32 @@ export const apiActionFetchCurrentForecast = async (city: string): Promise<Weath
   return response.json();
 };
 
-export const parseWeatherForecastToFrontend = async (city: string): Promise<WeatherResponseF> => {
-  const backendData = await apiActionFetchCurrentForecast(city);
-  return parseWeatherResponse(backendData);
+export const apiActionFetchBulkWeather = async (): Promise<WeatherForecastResponseBulkB> => {
+  const response = await fetch(
+    `https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_APP_WEATHER_API_KEY}&q=bulk&days=7`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        locations: largestCitiesInPoland.map(city => ({ q: city }))
+      })
+    }
+  );
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  const data = await response.json();
+  const sanitizedData = data.bulk.map((item: BulkQueryResponseB)=> {
+    return {
+      current: item.query.current,
+      forecast: item.query.forecast,
+      location: item.query.location
+    }
+  });
+  return sanitizedData;
 };
-
 
 export const fetchAutocompleteSuggestions = async (query: string): Promise<SuggestionB[]> => {
   const response = await fetch(

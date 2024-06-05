@@ -19,10 +19,8 @@ const weatherSlice = createSlice({
     setLatestCity: (state, action: PayloadAction<WeatherResponseF>) => {
       state.latestCity = action.payload;
     },
-    addLatestCity: (state, action: PayloadAction<WeatherResponseF>) => {
-      if (!state.latestCities.includes(action.payload)) {
-        state.latestCities.push(action.payload);
-      }
+    setLatestCities: (state, action: PayloadAction<WeatherResponseF[]>) => {
+      state.latestCities = action.payload;
     },
   },
 });
@@ -31,5 +29,5 @@ export const getLatestCity = (state: { weather: WeatherState }) => state.weather
 export const getLatestCities = (state: { weather: WeatherState }) => state.weather.latestCities;
 
 
-export const { setLatestCity, addLatestCity } = weatherSlice.actions;
+export const { setLatestCity, setLatestCities } = weatherSlice.actions;
 export default weatherSlice.reducer;
