@@ -1,6 +1,6 @@
 import styles from './searchCity.module.scss';
 import searchIcon from '@assets/search-icon.svg';
-import { Suspense, useMemo, useState, useEffect, useRef, use } from 'react'
+import { Suspense, useMemo, useState, useEffect, useRef, use, FC } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useActionState } from 'react';
 import { getAutocompleteSuggestions, Suggestion } from '../../logic/api/weatherApi.actions.ts';
@@ -44,8 +44,8 @@ const AutocompleteSuggestions = ({ suggestionPromise, onSuggestionClick }: Autoc
       {suggestions.map((suggestion, index) => (
         <div
           key={suggestion.id}
-          className={`${styles.suggestionItem} ${index === selectedIndex ? styles.activeSuggestion : ''}`}
-          onClick={() => onSuggestionClick(suggestion)}
+          className={`${'suggestionItem'} ${index === selectedIndex ? 'activeSuggestion' : ''}`}
+          onClick={() => {onSuggestionClick(suggestion); console.log('aaa')}}
         >
           {suggestion.name}
         </div>
@@ -54,9 +54,9 @@ const AutocompleteSuggestions = ({ suggestionPromise, onSuggestionClick }: Autoc
   );
 };
 
-export const SearchCity = () => {
+export const SearchCity: FC<{isFullWidth: boolean}> = ({isFullWidth}) => {
   const [city, setCity] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const debouncedSearch = useDebounce(city, 500);
 
@@ -73,27 +73,35 @@ export const SearchCity = () => {
 
 
   const handleSuggestionClick = (suggestion: Suggestion) => {
-    setCity(suggestion.name);
     navigate(`/${suggestion.name}`);
+    setCity('');
+    setIsOpen(false);
   };
+
+  useEffect(() => {
+    if (debouncedSearch.length > 3) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [debouncedSearch]);
 
   const suggestionPromise = useMemo(() => getAutocompleteSuggestions(debouncedSearch), [debouncedSearch]);
 
   return (
     <>
-      <form className={styles.searchBox} onSubmit={submitAction}>
+      <form className={`${styles.searchBox} ${isFullWidth ? styles.fullWidth : ''}`} onSubmit={submitAction}>
         <div className={'appInputTextField'}>
           <input
+            autoComplete="off"
             type="text"
             name="city"
             placeholder="Pogoda dla..."
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
           />
-          {isFocused && (
-            <Suspense fallback={<div>Loading suggestions...</div>}>
+          {isOpen && (
+            <Suspense>
               {city && (
                 <AutocompleteSuggestions
                   suggestionPromise={suggestionPromise}
