@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5173:5173"  # Expose the port the app runs on
+    environment:
+      - NODE_ENV=production
+    command: npm run preview
+
+  nginx:
+    build:
+      context: ./host/prod
+      args:
+        - DOMAIN_NAME=${DOMAIN_NAME}
+    ports:
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
+    volumes:
+      - ./data/certbot/www:/var/www/certbot
+    depends_on:
+      - web
+    command: >
+      /bin/sh -c '
+      while [ ! -f /etc/letsencrypt/live/${DOMAIN_NAME}/fullchain.pem ]; do
+        echo "Waiting for certificates at /etc/letsencrypt/live/${DOMAIN_NAME}/fullchain.pem";
+        sleep 10;
+      done;
+      nginx -g "daemon off;"
+      '

@@ -1,0 +1,200 @@
+{
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react-dom/client.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react-dom/index.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/cjs/react-compiler-runtime.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/cjs/react.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/compiler-runtime.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/index.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/react/jsx-runtime.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/scheduler/index.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.production.min.js?commonjs-exports": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000/home/kacper/WebstormProjects/react-canary-test/node_modules/use-sync-external-store/with-selector.js?commonjs-module": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000commonjsHelpers.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "\u0000vite/modulepreload-polyfill.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "index.html": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/@remix-run/router/dist/router.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/@uidotdev/usehooks/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/immer/dist/immer.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-dom/cjs/react-dom-client.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-dom/cjs/react-dom.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-dom/client.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-dom/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-redux/dist/react-redux.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-router-dom/dist/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react-router/dist/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/cjs/react-compiler-runtime.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/cjs/react-jsx-runtime.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/cjs/react.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/compiler-runtime.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/react/jsx-runtime.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/redux-thunk/dist/redux-thunk.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/redux/dist/redux.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/reselect/dist/reselect.mjs": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/scheduler/cjs/scheduler.production.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/scheduler/index.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.production.min.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "node_modules/use-sync-external-store/with-selector.js": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/App.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/assets/search-icon.svg": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/assets/weatherapp.webp": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/entry-client.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/api/weatherApi.actions.ts": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/api/weatherApi.parsers.ts": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/router.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/store/largestPolishCities.const.ts": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/store/store.ts": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/logic/store/weather/weatherSlice.ts": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/CityWeather.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/common.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/largestCitiesWeather.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/largestCitiesWeather.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/weatherCityCard.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/weatherDetails.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/CityWeather/components/weatherDetails.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/Home/Home.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/Home/Home.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/components/autocomplete/autocompleteCity.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/components/autocomplete/autocompleteCity.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/components/autocomplete/autocompleteList.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/components/dialog/dialog.module.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/pages/components/dialog/dialog.tsx": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ],
+  "src/styles/main.scss": [
+    "/assets/weatherapp-DTC7c7xn.webp"
+  ]
+}

@@ -78,7 +78,7 @@ function parseAstro(astro: AstroB): AstroF {
 }
 
 
-// end parsers
+// end-to parsers
 
 
 export const parseBulkWeatherToFrontend = async (): Promise<WeatherResponseF[]> => {
