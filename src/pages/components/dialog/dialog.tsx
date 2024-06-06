@@ -13,15 +13,23 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, children }) => {
 
   useEffect(() => {
     const dialog = dialogRef.current;
+    const body = document.body;
+
     if (dialog) {
       if (isOpen) {
         if (!dialog.open) {
           dialog.showModal();
+          body.style.overflow = 'hidden';
         }
       } else {
         dialog.close();
+        body.style.overflow = '';
       }
     }
+    // Clean up the overflow style on unmount or if the dialog is closed
+    return () => {
+      body.style.overflow = '';
+    };
   }, [isOpen]);
 
   const handleBackdropClick = (event: React.MouseEvent) => {
@@ -35,7 +43,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, children }) => {
       <div className={styles.dialogContent}>
         {children}
         <div className={styles.dialogHeader}>
-          <div onClick={onClose} className={`appButton ${styles.closeButton}`}>Close</div>
+          <div onClick={onClose} className={`appButton ${styles.closeButton}`}>Zamknij</div>
         </div>
       </div>
     </dialog>

@@ -9,6 +9,12 @@
   inset: 0;
   padding: 0;
   background: none;
+
+  @include respond-to('tablet') {
+    margin: auto;
+    max-width: initial;
+    max-height: calc(100vh - 4rem);
+  }
 }
 
 .dialog::backdrop {
@@ -16,12 +22,22 @@
 }
 
 .dialogContent {
+  border-radius: $border-radius-md;
   max-width: $breakpoint-tablet;
   width: 100%;
+  margin: auto;
   background: $white;
   padding: $default-spacing;
-  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+
+  @include respond-to('mobile') {
+    width: $breakpoint-mobile;
+  }
+
+  @include respond-to('tablet') {
+    width: $breakpoint-tablet;
+  }
 }
 
 .closeButton {

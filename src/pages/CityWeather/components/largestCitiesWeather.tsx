@@ -22,7 +22,6 @@ const LargestCitiesWeather = ({ largestCitiesPromise }: { largestCitiesPromise: 
   const latestCity = useSelector(getLatestCity);
 
 
-
   return (
     <>
       <div className={styles.navigation}>
@@ -39,7 +38,6 @@ const LargestCitiesWeather = ({ largestCitiesPromise }: { largestCitiesPromise: 
             </div>
           ))}
         </div>
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1 fr 1fr'}}></div>
       </Dialog>
     </>
   );

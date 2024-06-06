@@ -7,16 +7,17 @@ import { Provider } from 'react-redux';
 import { store } from './logic/store/store';
 import { BrowserRouter } from 'react-router-dom'
 import App from '@/App.tsx'
+import React from 'react';
 
 ReactDOM.hydrateRoot(
   document.getElementById('root') as HTMLElement,
-  // <React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  // </React.StrictMode>
+  </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function

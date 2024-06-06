@@ -7,7 +7,7 @@ export const largestCitiesInPoland = [
   'Poznan',     // Poznan
   'Gdansk',     // Gdansk
   'Szczecin',   // Szczecin
-  'Bydgoszcz',  // Bydgoszcz
+  'Kalisz',     // Kalisz
   'Lublin',     // Lublin
   'Katowice'    // Katowice
 ];

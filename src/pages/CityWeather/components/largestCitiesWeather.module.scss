@@ -8,6 +8,20 @@
 .cityRow {
   display: flex;
   align-items: center;
-  padding: $default-spacing/2;
+  justify-content: center;
+  border-radius: $border-radius-md;
+  padding: calc($default-spacing/2) $default-spacing;
   width: 100%;
+}
+
+
+.weatherGrid {
+  margin-top: $default-spacing*2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: $default-spacing;
+}
+
+.cityRow:nth-child(3n-1) { // Every third item, starting from the second
+  background-color: $antiflash-white; // Light grey background
 }
