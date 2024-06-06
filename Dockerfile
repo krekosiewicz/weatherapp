@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json (or npm-shrinkwrap.json) to the container
 COPY package*.json ./
-
+COPY .env ./
 # Install dependencies, legacy peer deps are required for React 19 RC (Canary)
 RUN npm install --legacy-peer-deps
 

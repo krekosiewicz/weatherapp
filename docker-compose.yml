@@ -4,12 +4,11 @@ services:
   web:
     build: .
     ports:
-      - "5173:5173"  # Expose the port the app runs on
+      - "5000:5173"  # Expose the port the app runs on
     env_file:
       - .env
     environment:
       - NODE_ENV=production
-    command: npm run preview
 
   nginx:
     build:
